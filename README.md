@@ -1,6 +1,6 @@
 # DOTFILES
 
----
+![](https://user-images.githubusercontent.com/19551058/144246542-0d2e4171-c27f-4fd0-ac4e-976fc64c4e51.png)
 
 ## Checklist
 
