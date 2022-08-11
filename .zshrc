@@ -16,8 +16,13 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="spaceship"
 
 SPACESHIP_PROMPT_ORDER=(
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
+  dir		# Current directory section
+  git		# Git section
+  node		# Noe version
+  rust		# Rust version
+  conda		# Conda version
+  pyenv		# Pyenv version
+  exit_code	# Exit code
   char          # Prompt character
 )
 
@@ -48,7 +53,7 @@ SPACESHIP_GIT_STATUS_DIVERGED="  "
 # ================================================================
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=15
@@ -63,7 +68,7 @@ COMPLETION_WAITING_DOTS="true"
 # HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(history last-working-dir pip python command-not-found dirhistory encode64 gitfast wd)
+plugins=(history last-working-dir ubuntu rust node npm nvm pip python pyenv react-native command-not-found dirhistory encode64 gitfast wd themes)
 
 # source plugin
 source $ZSH/oh-my-zsh.sh
@@ -86,34 +91,31 @@ export NVM_DIR="$HOME/.nvm"
 # added by Anaconda2 installer
 # export PATH="/home/humble_d/anaconda2/bin:$PATH"
 
-# mozilla configuration file
-# export MOZCONFIG=~/Projects/collaboration/Firefox_src/mozilla-unified/mozconfig
-
 # android sdk path
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export ANDROID_HOME=$HOME/Android/Sdk
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # java run time path (using android studio)
-export JAVA_HOME=$HOME/android-studio/jre
-export PATH=$PATH:$JAVA_HOME/bin
+# export JAVA_HOME=$HOME/android-studio/jre
+# export PATH=$PATH:$JAVA_HOME/bin
 
 # QT framework path
 # export PATH="/home/humble_d/Library/Qt/5.11.2/gcc_64/bin:$PATH"
 # LD_LIBRARY_PATH="/opt/Qt/5.11.2/gcc_64/lib"
 
 # Flutter sdk
-export PATH="$PATH:$HOME/flutter_sdk/bin"
+# export PATH="$PATH:$HOME/flutter_sdk/bin"
 
 # Tensorflow
-export PATH="/opt/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/opt/cuda/lib64"
-alias tensorflow='nvidia-docker run -it --rm --name tf -v ~/Projects/data_science/:/tf/notebooks/ -p 8888:8888 -p 6006:6006 humbled/tensorflow'
+# export PATH="/opt/cuda/bin:$PATH"
+# export LD_LIBRARY_PATH="/opt/cuda/lib64"
+# alias tensorflow='nvidia-docker run -it --rm --name tf -v ~/Projects/data_science/:/tf/notebooks/ -p 8888:8888 -p 6006:6006 humbled/tensorflow'
 
 # Pytorch
-export PATH="/home/humble_d/.local/bin:$PATH"
+# export PATH="/home/humble_d/.local/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -130,5 +132,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Cargo
+# ---------------------------------------------------------------------------- #
+#                                     Cargo                                    #
+# ---------------------------------------------------------------------------- #
 . "$HOME/.cargo/env"
